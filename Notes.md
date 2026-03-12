@@ -33,3 +33,16 @@ Build the Server:
 
 Step 1: Configure the Server Scripts 
 Step 2: Configure TypeScript for Modern ES Modules
+Step 3: Create the Server Directory Structure
+
+
+
+
+
+
+
+
+# Trouble Shooting Errors:
+
+1. Import Error in server/src/index.ts for ../shared-types/index.js
+   Resolved: Updated to point to ../../shared-types/index.js
