@@ -37,7 +37,7 @@ Step 3: Create the Server Directory Structure
 Step 4: Import Dependencies and Setup (server/src/index.ts)
 Step 5: Express and Socket.IO Setup (server/src/index.ts)
 Step 6: Initialize Vehicle State (server/src/index.ts)
-
+Step 7: Client Tracking and Socket Extension (server/src/index.ts)
 
 
 

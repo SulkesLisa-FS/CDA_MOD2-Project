@@ -53,3 +53,21 @@ let vehicleState: VehicleState = {
   },
   timestamp: Date.now()
 };
+
+// Track connected clients by type with proper typing
+interface ConnectedClients {
+  [key: string]: number;
+}
+const connectedClients: ConnectedClients = {
+  mobile: 0,
+  tablet: 0,
+  web: 0,
+  test: 0
+};
+// Extend Socket interface to include clientType
+declare module 'socket.io' {
+  interface Socket {
+    clientType?: ClientType;
+  }
+}
+
