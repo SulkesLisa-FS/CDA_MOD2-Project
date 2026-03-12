@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { useVehicleConnection } from './src/hooks/useVehicleConnection';
-// import SteeringSlider from './src/components/SteeringSlider';
-// import GasPedal from './src/components/GasPedal';
-// import BrakeButton from './src/components/BrakeButton';
-// import Controls from './src/components/Controls';
+import SteeringSlider from './src/components/SteeringSlider';
+import GasPedal from './src/components/GasPedal';
+import BrakeButton from './src/components/BrakeButton';
+import Controls from './src/components/Controls';
 const { width, height } = Dimensions.get('window');
 export default function App() {
   const { connected, vehicleState, sendControlInput } = useVehicleConnection();
@@ -66,10 +66,7 @@ export default function App() {
         {/* Left Side - Steering */}
         <View style={styles.leftControls}>
 
-
-
-          {/* <SteeringSlider onSteer={handleSteering} /> */}
-
+          <SteeringSlider onSteer={handleSteering} />
 
         </View>
         {/* Center - Vehicle Info & Controls */}
@@ -80,26 +77,20 @@ export default function App() {
               {vehicleState.controls?.gear || 'P'}
             </Text>
           </View>
-          
 
-
-          {/* <Controls 
+          <Controls 
             onControl={sendControlInput}
             currentGear={vehicleState.controls?.gear}
             systems={vehicleState.systems}
-          /> */}
-
-
+          />
 
         </View>
         {/* Right Side - Gas & Brake */}
         <View style={styles.rightControls}>
           <View style={styles.pedalControls}>
 
-
-            {/* <GasPedal onThrottle={handleThrottle} />
-            <BrakeButton onBrake={sendControlInput} /> */}
-
+            <GasPedal onThrottle={handleThrottle} />
+            <BrakeButton onBrake={sendControlInput} />
 
           </View>
         </View>

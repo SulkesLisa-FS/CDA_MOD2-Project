@@ -16,7 +16,8 @@ NEXT...
 ### Part II: Screen Orientation & App Shell
 
 1. Landscape Orientation Configuration (App.tsx)
-2. Test Server connection
+2. Comment out Imported Compoments - Not built yet. (App.tsx)
+3. Test Server connection
 
 NEXT...
 
@@ -28,6 +29,24 @@ NEXT...
 3. (SKIPPED - Already added in the first step) 
    Update styles to support this horizontal slider design:
 4. Building the Gas Pedal   (GasPedal.tsx)
+
+
+NEXT...
+
+### Part IV: Secondary Controls
+
+1. Brake Button Component  (BrakeButton.tsx)
+2. Gear Selector & Controls   (Controls.tsx)
+3. Undo commented out components  (App.tsx)
+
+
+NEXT...
+
+### Part V: Integration & Testing
+
+1. (SKIPPED - Already added in Part 2 - step 1)
+   Final App Assembly  (App.tsx)
+2. Testing & Debugging - No Errors
 
 
 
