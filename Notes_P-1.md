@@ -49,9 +49,26 @@ NEXT...
 
 ## Testing The Server
 1. Run Server - npm run dev
-2. Create a Test Client
+2. Create a Test Client  <br>
 
+NEXT...
 
+### Proof of Work
+- [ ] all four TypeScript projects are created with dependencies installed
+
+- [ ] Create shared-types module
+
+- [ ] compile the shared-types module
+
+- [ ] Test the TypeScript server with the provided HTML client
+
+- [ ] Record a small demo of the project running 
+
+- [ ] Read: React Native documentation  & TypeScript basics
+
+- [ ] Sketch Mobile Interface - Low Fidelity
+
+<br>
 
 # Trouble Shooting Errors:
 
