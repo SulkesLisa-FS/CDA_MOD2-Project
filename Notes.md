@@ -31,22 +31,23 @@ NEXT...
 Create the foundation of the type-safe architecture <br>
 Build the Server:
 
-Step 1: Configure the Server Scripts 
-Step 2: Configure TypeScript for Modern ES Modules
-Step 3: Create the Server Directory Structure
-Step 4: Import Dependencies and Setup  (server/src/index.ts)
-Step 5: Express and Socket.IO Setup  (server/src/index.ts)
-Step 6: Initialize Vehicle State  (server/src/index.ts)
-Step 7: Client Tracking and Socket Extension  (server/src/index.ts)
-Step 8: Connection Handling  (server/src/index.ts)
-Step 9: Control Input Handling
-Step 10: Physics Simulation
-Step 11: Server Startup
+Step 1: Configure the Server Scripts  <br>
+Step 2: Configure TypeScript for Modern ES Modules  <br>
+Step 3: Create the Server Directory Structure  <br>
+Step 4: Import Dependencies and Setup  (server/src/index.ts)  <br>
+Step 5: Express and Socket.IO Setup  (server/src/index.ts)  <br>
+Step 6: Initialize Vehicle State  (server/src/index.ts)  <br>
+Step 7: Client Tracking and Socket Extension  (server/src/index.ts)  <br>
+Step 8: Connection Handling  (server/src/index.ts)  <br>
+Step 9: Control Input Handling  <br>
+Step 10: Physics Simulation  <br>
+Step 11: Server Startup  <br>
 
+NEXT...
 
-
-
-
+## Testing The Server
+1. Run Server - npm run dev
+2. Create a Test Client
 
 
 

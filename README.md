@@ -21,10 +21,20 @@ TERM: C202603
 
     npm run web
 
+<br>
 
 ### Server Scripts
 - "dev": Uses tsx for seamless TypeScript development with ES modules
-
 - "build": Compiles TypeScript to JavaScript
-
 - "start": Runs compiled JavaScript in production
+
+Run: 
+
+    npm run dev    - Development
+    
+
+<br>
+
+### PORTS:
+
+- Server Start-Up: 3001
