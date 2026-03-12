@@ -24,7 +24,12 @@ Step 4: Create the Web Map Interface <br>
 Step 5: Create the TypeScript Server <br>
 Step 6: Create Shared Type Definitions <br>
 
-- II Server Infrastructure
+NEXT...
 
-    * Create the foundation of the type-safe architecture
-    * Build the Server
+## II Server Infrastructure
+
+Create the foundation of the type-safe architecture <br>
+Build the Server:
+
+Step 1: Configure the Server Scripts 
+Step 2: Configure TypeScript for Modern ES Modules

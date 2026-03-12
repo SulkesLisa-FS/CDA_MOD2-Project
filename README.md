@@ -14,8 +14,17 @@ TERM: C202603
 - Shared Type Definitions for maintaining consistency and preventing bugs: Acts as a common language between all applictions. <br>
 
 
-### TEST Platforms
-- cd mobile-controls
-- npm run android
-- npm run ios
-- npm run web
+### Expo TEST Platforms
+    npm run android
+
+    npm run ios
+
+    npm run web
+
+
+### Server Scripts
+- "dev": Uses tsx for seamless TypeScript development with ES modules
+
+- "build": Compiles TypeScript to JavaScript
+
+- "start": Runs compiled JavaScript in production
