@@ -10,6 +10,19 @@
     * Define the interfaces needed for mobile controls. (src/types/index.ts)
 3. Socket Connection Setup  (src/hooks/useVehicleConnection.ts)
 
+NEXT...
+
+### Screen Orientation & App Shell
+
+1. Landscape Orientation Configuration (App.tsx)
+
+
+
+
+
+
+
+
 <br>
 
 
@@ -43,3 +56,7 @@ Resolved: - on Hold
 
 3. useVehicleConnections.ts Import shared-types error
    Resolved: Updated to point to '../../../shared-types'
+
+4. App.tsx Component Import Errors
+   Resolved - Commented Out Until Component are Built. 
+   
