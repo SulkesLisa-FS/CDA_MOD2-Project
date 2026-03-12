@@ -3,7 +3,7 @@ import io, { Socket } from 'socket.io-client';
 import { VehicleState, ControlInput } from '../../../shared-types';
 import { VehicleConnection } from '../types';
 // Replace with your actual server IP
-const SERVER_URL = 'http://10.0.0.227:3001';
+const SERVER_URL = 'http://192.168.2.80:3001';
 export function useVehicleConnection(): VehicleConnection {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [connected, setConnected] = useState(false);

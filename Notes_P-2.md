@@ -15,6 +15,7 @@ NEXT...
 ### Screen Orientation & App Shell
 
 1. Landscape Orientation Configuration (App.tsx)
+2. Test Server connection
 
 
 
@@ -51,12 +52,15 @@ NEXT...
 1. mkdir: src: No such file or directory.  The project has no "src" directory and the command "mkdir src/types" gave the error message.
    Resolved: Mannualy created the "src" file, cd into "src" and proceed with "mkdir types".
 
-2. tsconfig.json _ "compilerOptions" Option 'customConditions' can only be used when 'moduleResolution' is set to 'node16', 'nodenext', or 'bundler'.
-Resolved: - on Hold
+2. tsconfig.json _ "compilerOptions" Option 'customConditions' can only be used when   'moduleResolution' is set to 'node16', 'nodenext', or 'bundler'.
+   Resolved: - Changed "moduleResolution" to  "bundler".
 
 3. useVehicleConnections.ts Import shared-types error
    Resolved: Updated to point to '../../../shared-types'
 
 4. App.tsx Component Import Errors
    Resolved - Commented Out Until Component are Built. 
-   
+
+5. Test Connection status is "Disconnected"
+   Resolved: Updated Server URL in useVehicleConnections.ts 
+

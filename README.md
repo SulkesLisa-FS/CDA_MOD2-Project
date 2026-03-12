@@ -14,9 +14,16 @@ TERM: C202603
 - Shared Type Definitions for maintaining consistency and preventing bugs: Acts as a common language between all applictions. <br>
 
 
-### Expo TEST Platforms
+### Run Expo
     
-    npm expo start
+    npx expo start
+
+    npx expo start --clear
+
+<br>
+
+
+### Expo TEST Platforms
     
     npm run android
 
