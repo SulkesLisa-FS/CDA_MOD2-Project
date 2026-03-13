@@ -14,11 +14,14 @@ TERM: C202603
 - Shared Type Definitions for maintaining consistency and preventing bugs: Acts as a common language between all applictions. <br>
 
 
-### Run Expo:  mobile-controls
+### Run Expo:  mobile-controls , tablet-cluster
     
     npx expo start
 
     npx expo start --clear
+
+    Press: i for mobile
+    Press: i for tablet
 
 <br>
 
@@ -38,7 +41,7 @@ TERM: C202603
 - "build": Compiles TypeScript to JavaScript
 - "start": Runs compiled JavaScript in production
 
-Run: 
+### Run the Server: 
 
     npm run dev    - Development
     
