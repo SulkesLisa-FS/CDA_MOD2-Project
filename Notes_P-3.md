@@ -19,6 +19,11 @@
 4. Dashboard Connection Hook  (useDashboardConnection.ts)
 5. Dashboard App Shell  (App.tsx)
 
+### Part II: Advanced Animated Gauge Components
+
+1. Gauge Mathematics & Trigonometry  (gaugeUtils.ts)
+2. Building the Speedometer Component  (Speedometer.tsx)
+
 
 
 
@@ -44,4 +49,16 @@
 
 2. App.tsx Import and View Errors
    Resolved - Commented Out Until Component are Built. 
+
+3. Multiple Errors in Speedometer.tsx:
+
+   (1.) {Needle} 'rotation' is deprecated.
+        types.d.ts(146, 8): The declaration was marked as deprecated here.
+        Issue:
+        rotation is deprecated
+        needleRotation is an Animated.Value
+        Resolve: Confirmed rotation is deprecated in react-native-svg and has been replaced with 'transform'.
+       
+
+   (2.) {Needle base} Type 'undefined' is not assignable to type 'Element | (string & Element)'.
 

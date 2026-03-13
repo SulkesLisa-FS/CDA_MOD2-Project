@@ -3,7 +3,7 @@ import io, { Socket } from 'socket.io-client';
 import { VehicleState } from '../../../shared-types';
 import { DashboardState } from '../types/dashboard';
 // Replace with your actual server IP
-const SERVER_URL = 'http://10.0.0.227:3001';
+const SERVER_URL = 'http://192.168.2.80:3001';
 export function useDashboardConnection(): DashboardState & {
   socket: Socket | null;
 } {
