@@ -161,8 +161,8 @@ export default function RPMGauge({
         
         {/* Needle */}
         <G
-          rotation={needleRotation}
-          origin={`${CENTER_X}, ${CENTER_Y}`}
+           transform={`rotate(${needleRotation},
+          ${CENTER_X}, ${CENTER_Y})`}
         >
           <Line
             x1={CENTER_X}

@@ -151,27 +151,11 @@ export default function Speedometer({
         {/* Tick marks and numbers */}
         {generateTickMarks()}
 
-
-
-
-
-
         {/* Needle */}
         <G
-
-        //  ISSUE - ROTATION DEPRECIATION
-
-          rotation={needleRotation}
-          origin={`${CENTER_X}, ${CENTER_Y}`}
-
-
-
-        // END TAG
+          transform={`rotate(${needleRotation},
+          ${CENTER_X}, ${CENTER_Y})`}
         >
-
-
-
- 
           <Line
             x1={CENTER_X}
             y1={CENTER_Y}

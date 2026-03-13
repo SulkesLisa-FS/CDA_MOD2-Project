@@ -84,3 +84,23 @@
 4. - RPMGauge.tsx - Issues: Depreciated: rotation
      Resolve: - TEMP HOLD
 
+### Rotation - Depreciation Issue
+
+
+The 'rotation' property in React Native's Animated API has been marked as deprecated. 
+This means that while it may still work for now, it is not recommended for use in new code and may be removed in future versions of React Native.
+
+
+Resources:
+
+MDN https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/transform
+
+React-native-svg: https://github.com/software-mansion/react-native-svg
+
+W3Schools: SVG Tutorial: https://www.w3schools.com/graphics/svg_intro.asp
+
+
+<G
+   transform={`rotate(${needleRotation},
+   ${CENTER_X}, ${CENTER_Y})`}
+>
