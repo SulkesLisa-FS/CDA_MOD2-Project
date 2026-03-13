@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 import Svg, { Circle, Path, Line, Text as SvgText, Defs, RadialGradient, Stop, G, } from 'react-native-svg';
 import { SpeedometerProps } from '../types/dashboard';
 import { calculateGaugePosition, generateGaugePath, formatSpeed } from '../utils/gaugeUtils';
+const AnimatedG = Animated.createAnimatedComponent(G);
 const SPEEDOMETER_SIZE = 200;
 const CENTER_X = SPEEDOMETER_SIZE / 2;
 const CENTER_Y = SPEEDOMETER_SIZE / 2;
@@ -152,10 +153,24 @@ export default function Speedometer({
         {generateTickMarks()}
 
         {/* Needle */}
-        <G
-          transform={`rotate(${needleRotation},
-          ${CENTER_X}, ${CENTER_Y})`}
-        >
+
+        {/* <G */}
+          {/* // rotation={needleRotation} 
+          // originX={CENTER_X} originY={CENTER_Y}
+
+          // transform={`rotate(${needleRotation},
+          // ${CENTER_X}, ${CENTER_Y})`} */}
+        {/* > */}
+
+            <AnimatedG
+  transform={needleRotation.interpolate({
+    inputRange: [-120, 120],
+    outputRange: [
+      `rotate(-120, ${CENTER_X}, ${CENTER_Y})`,
+      `rotate(120, ${CENTER_X}, ${CENTER_Y})`
+    ]
+  })}
+>
           <Line
             x1={CENTER_X}
             y1={CENTER_Y}
@@ -175,7 +190,15 @@ export default function Speedometer({
             stroke="#fff"
             strokeWidth="2"
           />
-        </G>
+        {/* </G> */}
+        </AnimatedG>
+
+
+
+
+
+
+
         
         {/* Center display */}
         <Circle

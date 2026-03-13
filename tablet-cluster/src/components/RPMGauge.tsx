@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Animated } from 'react-native';
 import Svg, { Circle, Path, Line, Text as SvgText, Defs, RadialGradient, Stop, G } from 'react-native-svg';
 import { RPMGaugeProps } from '../types/dashboard';
 import { calculateGaugePosition, generateGaugePath, formatRPM } from '../utils/gaugeUtils';
+const AnimatedG = Animated.createAnimatedComponent(G);
 const RPM_GAUGE_SIZE = 180;
 const CENTER_X = RPM_GAUGE_SIZE / 2;
 const CENTER_Y = RPM_GAUGE_SIZE / 2;
@@ -159,11 +160,29 @@ export default function RPMGauge({
         {/* Tick marks and numbers */}
         {generateRPMTicks()}
         
+
+
+
+
         {/* Needle */}
-        <G
+
+        {/* <G
            transform={`rotate(${needleRotation},
           ${CENTER_X}, ${CENTER_Y})`}
-        >
+        > */}
+
+            <AnimatedG
+  transform={needleRotation.interpolate({
+    inputRange: [-120, 120],
+    outputRange: [
+      `rotate(-120, ${CENTER_X}, ${CENTER_Y})`,
+      `rotate(120, ${CENTER_X}, ${CENTER_Y})`
+    ]
+  })}
+>  
+
+
+
           <Line
             x1={CENTER_X}
             y1={CENTER_Y}
@@ -182,7 +201,9 @@ export default function RPMGauge({
             stroke="#fff"
             strokeWidth="2"
           />
-        </G>
+        {/* </G> */}
+</AnimatedG>
+
         
         {/* Center circle */}
         <Circle

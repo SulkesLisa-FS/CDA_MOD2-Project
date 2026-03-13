@@ -102,42 +102,33 @@ React-Native: https://reactnative.dev/docs/transforms
 W3Schools: SVG Tutorial: https://www.w3schools.com/graphics/svg_intro.asp
 
 
-<G
-   transform={`rotate(${needleRotation},
-   ${CENTER_X}, ${CENTER_Y})`}
->
+- Transform did not work - is an object and not seen as a number
+- Had to create an Animated component using <G>
 
 
+__________________
+
+1. Right After Improts Add: 
+
+      const AnimatedG = Animated.createAnimatedComponent(G);
+
+2. Replce 
+      <G
+         rotation={needleRotation} 
+         originX={CENTER_X} originY={CENTER_Y}
+      
+      >
 
 
+ With: 
+       <AnimatedG
+         transform={needleRotation.interpolate({
+         inputRange: [-120, 120],
+         outputRange: [
+            `rotate(-120, ${CENTER_X}, ${CENTER_Y})`,
+            `rotate(120, ${CENTER_X}, ${CENTER_Y})`
+            ]
+         })}
+      >  
 
-
-______________________________________
-
-
-
-
-To use Claude Opus 4.6 in Agent mode, it has to be available in your Copilot model picker first.
-
-Try this:
-
-1. Open the Copilot Chat panel in VS Code.
-2. Switch to Agent mode (if not already).
-3. Click the model selector in the chat header/composer.
-4. Look for Claude Opus 4.6 and select it.
-
-If you do not see it, that usually means one of these:
-
-1. Your Copilot plan/account does not currently have access.
-2. Your org admin policy is restricting allowed models.
-3. Your VS Code or Copilot extension is outdated.
-4. The model is still rolling out and not enabled for your tenant yet.
-
-Quick checks:
-
-1. Update VS Code and the GitHub Copilot + Copilot Chat extensions.
-2. Sign out/in of GitHub in VS Code.
-3. Ask your org admin to verify model access policies.
-4. Check GitHub Copilot docs/changelog for current model availability.
-
-If you want, I can walk you through where the model picker is in your exact VS Code layout and what to click next.
+3. Replce Closing Tag </G>  With  </AnimatedG>
