@@ -36,6 +36,16 @@ TERM: C202603
 
 <br>
 
+
+### React-Native Debugger
+
+To Open: Run expo
+
+    Press: j  for expo-React Native Dev Tools
+
+
+    
+
 ### Server Scripts
 - "dev": Uses tsx for seamless TypeScript development with ES modules
 - "build": Compiles TypeScript to JavaScript

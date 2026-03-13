@@ -52,6 +52,12 @@ export default function RPMGauge({
       pulseAnimation.stopAnimation();
       Animated.timing(pulseAnimation, { toValue: 1.0, duration: 200, useNativeDriver: true }).start();
     }
+
+    return () => {
+      needleRotation.stopAnimation();
+      pulseAnimation.stopAnimation();
+    };
+
   }, [rpm, redline, maxRpm]);
   const generateRPMTicks = () => {
     const ticks = [];

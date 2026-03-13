@@ -79,10 +79,10 @@
        
 
    (2.) {Needle base} Type 'undefined' is not assignable to type 'Element | (string & Element)'.
-        Resolve: - TEMP HOLD
+        Resolve: - Resolved after itself after fixing rotation depreciation
 
 4. - RPMGauge.tsx - Issues: Depreciated: rotation
-     Resolve: - TEMP HOLD
+     Resolve: - See Solution Below
 
 ### Rotation - Depreciation Issue
 

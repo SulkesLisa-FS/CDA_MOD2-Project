@@ -49,6 +49,10 @@ export default function Speedometer({
         Animated.timing(scaleValue, { toValue: 1.0, duration: 200, useNativeDriver: true })
       ]).start();
     }
+        return () => {
+      needleRotation.stopAnimation();
+      scaleValue.stopAnimation();
+    };
   }, [speed, speedLimit, maxSpeed]);
   // Generate tick marks for speedometer
   const generateTickMarks = () => {
