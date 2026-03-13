@@ -14,7 +14,7 @@ TERM: C202603
 - Shared Type Definitions for maintaining consistency and preventing bugs: Acts as a common language between all applictions. <br>
 
 
-### Run Expo
+### Run Expo:  mobile-controls
     
     npx expo start
 

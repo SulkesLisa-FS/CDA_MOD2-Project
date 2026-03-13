@@ -16,6 +16,10 @@
     *  Instant Recognition: Warning states must be recognizable in under 200ms
     *  Failure Indication: System must clearly show when sensors fail or data becomes stale
 3. Implementation Standards   (dashboard.ts)
+4. Dashboard Connection Hook  (useDashboardConnection.ts)
+5. Dashboard App Shell  (App.tsx)
+
+
 
 
 
@@ -34,8 +38,10 @@
 
 # Trouble Shooting Issues & Errors:
 
+1. useDashboardConnection.ts - Import shared-types error
+   Resolved: Updated to point to '../../../shared-types'
 
 
-
-
+2. App.tsx Import and View Errors
+   Resolved - Commented Out Until Component are Built. 
 
