@@ -161,8 +161,8 @@ export default function Speedometer({
 
         //  ISSUE - ROTATION DEPRECIATION
 
-        //   rotation={needleRotation}
-        //   origin={`${CENTER_X}, ${CENTER_Y}`}
+          rotation={needleRotation}
+          origin={`${CENTER_X}, ${CENTER_Y}`}
 
 
 
