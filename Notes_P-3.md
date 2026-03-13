@@ -116,6 +116,7 @@ MDN https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/transfo
 React-native-svg: https://github.com/software-mansion/react-native-svg
 
 React-Native: https://reactnative.dev/docs/transforms
+React-Native API : https://reactnative.dev/docs/animations#interpolation
 
 W3Schools: SVG Tutorial: https://www.w3schools.com/graphics/svg_intro.asp
 
@@ -130,6 +131,12 @@ _______________________________________________________________
 
       const AnimatedG = Animated.createAnimatedComponent(G);
 
+      // Created an Animated version of the SVG <G> (group) element.
+      // This is needed because Animated.Value cannot be passed directly 
+      // to a regular SVG component's transform prop — only components 
+      // wrapped with createAnimatedComponent can accept animated values.
+
+
 2. Replce 
       <G
          rotation={needleRotation} 
@@ -139,6 +146,7 @@ _______________________________________________________________
 
 
  With: 
+
        <AnimatedG
          transform={needleRotation.interpolate({
          inputRange: [-120, 120],
@@ -148,5 +156,14 @@ _______________________________________________________________
             ]
          })}
       >  
+
+
+      // Replaced deprecated 'rotation' prop with 'transform'.
+      // .interpolate() maps the Animated.Value (a number from -120 to 120)
+      // into SVG transform strings like "rotate(-120, 100, 100)".
+      // React Native's animation system extracts the numbers from matching
+      // string patterns and animates smoothly between them.
+
+      
 
 3. Replce Closing Tag </G>  With  </AnimatedG>
