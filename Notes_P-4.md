@@ -23,6 +23,11 @@
 ### Part III: Environmental Control Systems
 
 1. Control Panel Component  (ControlPanel.tsx)
+2. Control Panel Styling  (ControlPanel.css)
+
+
+### Part IV: Admin Dashboard & System Monitoring
+
 
 
 
