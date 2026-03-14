@@ -35,6 +35,8 @@
 ### Part V: Final Integration & Testing
 
 1. Main App Assembly  (Update: App.tsx)
+2. Remove React StrictMode (Update: main.tsx)
+3. Main Layout  (Update: App.css)
 
 
 
@@ -75,7 +77,13 @@
 
 2. VehicleMap.tsx  Errors 
     - .env Property 'env' does not exist on type 'ImportMeta'.
-    Resolved: - HOLD
+    Resolved: - Created file vite-env.d.ts file and added /// <reference types="vite/client" />
+
+    After Fix: More Errors still presist:
+
+    * Line 54 Error: 'catch' or 'finally' expected.
+      Resolved: Removed exter closing brackets at the end of 'map.current!.addLayer'.
+      Rest of the errors were resolved after this fix. 
 
 
 3. ControlPanel.tsx EnvironmentUpdate Import Error:
@@ -85,3 +93,7 @@
 4. App.tsx   Error with <VehicleMap/> in the body import.
    I suspect because of the .env error from above # 2 error. 
     Resolved: - HOLD
+
+5. main.tsx Error with import App from './App.tsx'
+   An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+   Resolved: Removed '.tsx'

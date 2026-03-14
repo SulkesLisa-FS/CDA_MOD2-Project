@@ -150,7 +150,7 @@ export default function VehicleMap({ vehicles, speedZones, alerts, onMapClick }:
         }
       });
     });
-        });
+        // });
       } catch (error) {
         console.error('Error setting up map:', error);
         return;
