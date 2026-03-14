@@ -11,6 +11,13 @@
 3. Web-Specific Type Definitions  (Create: web.ts)
 
 
+### Part II: Real-time Vehicle Tracking Interface
+
+1. Connection Management for Web  (Create: useTrafficControl.ts)
+2. Vehicle Tracking Map Component 
+    * (Signup: mapbox - Get Access Token // Create .env)
+    * (Create: VehicleMap.tsx)
+
 
 
 
