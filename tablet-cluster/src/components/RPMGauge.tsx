@@ -93,7 +93,7 @@ export default function RPMGauge({
 
     for (let i = 0; i <= tickCount; i++) {
       const value = (maxRpm / 1000 / tickCount) * i;
-      console.log('Tick', i, '- value:', value, '- expected:', (maxRpm / tickCount) * i);
+      // console.log('Tick', i, '- value:', value);
       const angle = -120 + (240 / tickCount) * i;
       const radians = (angle * Math.PI) / 180;
 
