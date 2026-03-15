@@ -48,7 +48,7 @@
 
 
 
-### Proof of Work
+## Proof of Work
 
 - [ ] Customize gauge styling: Try different color schemes, sizes, or visual effects
 
