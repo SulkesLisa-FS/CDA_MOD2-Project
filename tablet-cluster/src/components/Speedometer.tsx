@@ -17,7 +17,7 @@ export default function Speedometer({
   color = '#00FF88' 
 }: SpeedometerProps) {
   
-  const needleRotation = useRef(new Animated.Value(-120)).current;
+  const needleRotation = useRef(new Animated.Value(-110)).current;
   const scaleValue = useRef(new Animated.Value(1)).current;
   
   useEffect(() => {
@@ -26,8 +26,8 @@ export default function Speedometer({
       speed, 
       0, 
       maxSpeed, 
-      -120, 
-      120, 
+      -110, 
+      130, 
       CENTER_X, 
       CENTER_Y, 
       NEEDLE_LENGTH,
@@ -61,7 +61,7 @@ export default function Speedometer({
     
     for (let i = 0; i <= tickCount; i++) {
       const value = (maxSpeed / tickCount) * i;
-      const angle = -120 + (240 / tickCount) * i;
+      const angle = -200 + (240 / tickCount) * i;
       const radians = (angle * Math.PI) / 180;
       
       const isMajor = i % 2 === 0; // Every other tick is major
@@ -137,7 +137,7 @@ export default function Speedometer({
         
         {/* Speed limit arc */}
         <Path
-          d={generateGaugePath(CENTER_X, CENTER_Y, GAUGE_RADIUS - 5, -120, -120 + (240 * speedLimit / maxSpeed))}
+          d={generateGaugePath(CENTER_X, CENTER_Y, GAUGE_RADIUS - 5, -200, -200 + (240 * speedLimit / maxSpeed))}
           stroke="#FFD700"
           strokeWidth="4"
           fill="none"
@@ -146,7 +146,7 @@ export default function Speedometer({
         
         {/* Danger zone arc */}
         <Path
-          d={generateGaugePath(CENTER_X, CENTER_Y, GAUGE_RADIUS - 5, -120 + (240 * speedLimit / maxSpeed), 120)}
+          d={generateGaugePath(CENTER_X, CENTER_Y, GAUGE_RADIUS - 5, -200 + (240 * speedLimit / maxSpeed), 40)}
           stroke="#FF4444"
           strokeWidth="4"
           fill="none"
@@ -168,10 +168,10 @@ export default function Speedometer({
 
             <AnimatedG
   transform={needleRotation.interpolate({
-    inputRange: [-120, 120],
+    inputRange: [-110, 130],
     outputRange: [
-      `rotate(-120, ${CENTER_X}, ${CENTER_Y})`,
-      `rotate(120, ${CENTER_X}, ${CENTER_Y})`
+      `rotate(-110, ${CENTER_X}, ${CENTER_Y})`,
+      `rotate(130, ${CENTER_X}, ${CENTER_Y})`
     ]
   })}
 >
