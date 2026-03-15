@@ -92,8 +92,42 @@ export default function RPMGauge({
 
 
     for (let i = 0; i <= tickCount; i++) {
+      // The /1000 is unnecessary
       const value = (maxRpm / 1000 / tickCount) * i;
       // console.log('Tick', i, '- value:', value);
+
+
+
+//  Before: 
+
+// 6000 / 1000 / 6 = 1 * 0  =  0  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 1  =  1  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 2  =  2  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 3  =  3  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 4  =  4  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 5  =  5  - Tick Mark Lable 
+// 6000 / 1000 / 6 = 1 * 6  =  6  - Tick Mark Lable 
+
+
+
+
+// After:   6000 / 6 - 1000 * i
+
+// 6000 / 6 = 1,000 * 0  =  0  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 1  =  1000  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 2  =  2000  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 3  =  3000  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 4  =  4000  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 5  =  5000  - Tick Mark Lable 
+// 6000 / 6 = 1,000 * 6  =  6000  - Tick Mark Lable
+
+
+
+
+
+
+
+
       const angle = -120 + (240 / tickCount) * i;
       const radians = (angle * Math.PI) / 180;
 
