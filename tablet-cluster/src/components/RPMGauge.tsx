@@ -87,13 +87,13 @@ export default function RPMGauge({
   const generateRPMTicks = () => {
     const ticks = [];
     const tickCount = 6; // 0, 1, 2, 3, 4, 5, 6 (x1000 RPM)
-    // console.log('maxRpm:', maxRpm, 'tickCount:', tickCount);
+    console.log('maxRpm:', maxRpm, 'tickCount:', tickCount);
 
 
 
     for (let i = 0; i <= tickCount; i++) {
       const value = (maxRpm / 1000 / tickCount) * i;
-      console.log('Tick', i, '- value:', value);
+      // console.log('Tick', i, '- value:', value);
 
 
 
