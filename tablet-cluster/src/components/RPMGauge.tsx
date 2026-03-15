@@ -25,7 +25,7 @@ const NEEDLE_LENGTH = 95;
 export default function RPMGauge({
   rpm,
   size = RPM_GAUGE_SIZE,
-  maxRpm = 6000, 
+  maxRpm = 6000,
   redline = 5000,
   color = "#00AAFF",
 }: RPMGaugeProps) {
@@ -81,53 +81,20 @@ export default function RPMGauge({
       needleRotation.stopAnimation();
       pulseAnimation.stopAnimation();
     };
-  }, 
-  
-  [rpm, redline, maxRpm]);
+  }, [rpm, redline, maxRpm]);
   const generateRPMTicks = () => {
     const ticks = [];
     const tickCount = 6; // 0, 1, 2, 3, 4, 5, 6 (x1000 RPM)
-    console.log('maxRpm:', maxRpm, 'tickCount:', tickCount);
-
-
-
+    // console.log('maxRpm:', maxRpm, 'tickCount:', tickCount);
     for (let i = 0; i <= tickCount; i++) {
-      const value = (maxRpm / 1000 / tickCount) * i;
-      // console.log('Tick', i, '- value:', value);
-
-
-
-
-//  Before: 
-
-// 6000 / 1000 / 6 = 1 * 0  =  0  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 1  =  1  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 2  =  2  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 3  =  3  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 4  =  4  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 5  =  5  - Tick Mark Lable 
-// 6000 / 1000 / 6 = 1 * 6  =  6  - Tick Mark Lable 
-
-
-
-
-// After:   6000 / 6 - 1000 * i
-
-// 6000 / 6 = 1,000 * 0  =  0  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 1  =  1000  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 2  =  2000  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 3  =  3000  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 4  =  4000  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 5  =  5000  - Tick Mark Lable 
-// 6000 / 6 = 1,000 * 6  =  6000  - Tick Mark Lable
-
-
-
-
-
-
-
-
+      // FIX: Removed the extra "/ 1000" from the original formula.
+      // Before: (maxRpm / 1000 / tickCount) * i → produced labels 0, 1, 2, 3, 4, 5, 6
+      // After:  (maxRpm / tickCount) * i        → produces labels 0, 1000, 2000, 3000, 4000, 5000, 6000
+      // The / 1000 was double-scaling the value since the label formatting
+      // already handles the x1000 display, causing ticks to show single digits
+      // instead of actual RPM values in thousands.
+      const value = (maxRpm / tickCount) * i;
+      // console.log('Tick', i, 'lable - value:', value);
       const angle = -200 + (240 / tickCount) * i;
       const radians = (angle * Math.PI) / 180;
 
