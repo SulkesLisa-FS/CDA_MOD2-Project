@@ -29,7 +29,7 @@ export default function RPMGauge({
   redline = 5000,
   color = "#00AAFF",
 }: RPMGaugeProps) {
-  const needleRotation = useRef(new Animated.Value(-120)).current;
+  const needleRotation = useRef(new Animated.Value(-110)).current;
   const pulseAnimation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -37,8 +37,8 @@ export default function RPMGauge({
       rpm,
       0,
       maxRpm,
-      -120,
-      120,
+      -110,
+      130,
       CENTER_X,
       CENTER_Y,
       NEEDLE_LENGTH,
@@ -128,7 +128,7 @@ export default function RPMGauge({
 
 
 
-      const angle = -120 + (240 / tickCount) * i;
+      const angle = -200 + (240 / tickCount) * i;
       const radians = (angle * Math.PI) / 180;
 
       const tickLength = 12;
@@ -210,8 +210,8 @@ export default function RPMGauge({
             CENTER_X,
             CENTER_Y,
             GAUGE_RADIUS - 3,
-            -120,
-            -120 + (240 * (redline * 0.9)) / maxRpm,
+            -200,
+            -200 + (240 * (redline * 0.9)) / maxRpm,
           )}
           stroke="#00AA44"
           strokeWidth="6"
@@ -225,8 +225,8 @@ export default function RPMGauge({
             CENTER_X,
             CENTER_Y,
             GAUGE_RADIUS - 3,
-            -120 + (240 * (redline * 0.9)) / maxRpm,
-            -120 + (240 * redline) / maxRpm,
+            -200 + (240 * (redline * 0.9)) / maxRpm,
+            -200 + (240 * redline) / maxRpm,
           )}
           stroke="#FFD700"
           strokeWidth="6"
@@ -240,8 +240,8 @@ export default function RPMGauge({
             CENTER_X,
             CENTER_Y,
             GAUGE_RADIUS - 3,
-            -120 + (240 * redline) / maxRpm,
-            120,
+            -200 + (240 * redline) / maxRpm,
+            40,
           )}
           stroke="#FF4444"
           strokeWidth="6"
@@ -254,10 +254,10 @@ export default function RPMGauge({
 
         <AnimatedG
           transform={needleRotation.interpolate({
-            inputRange: [-120, 120],
+            inputRange: [-110, 130],
             outputRange: [
-              `rotate(-120, ${CENTER_X}, ${CENTER_Y})`,
-              `rotate(120, ${CENTER_X}, ${CENTER_Y})`,
+              `rotate(-110, ${CENTER_X}, ${CENTER_Y})`,
+              `rotate(130, ${CENTER_X}, ${CENTER_Y})`,
             ],
           })}
         >
