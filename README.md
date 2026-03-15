@@ -63,3 +63,9 @@ To Open: Run expo
 - Server:      3001
 
 - iOS: &emsp;  8081
+
+
+
+## What Does Not Work
+
+1. Tablet Gauges - The center numbers don't match the tick marks and its lable value
